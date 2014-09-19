@@ -1,0 +1,288 @@
+=====================================================================================
+Codebook for Data Processed from the 
+"Human Activity Recognition Using Smartphones" Data Set
+=====================================================================================
+The Original Study Data
+The original study was done on 30 subjects ranging in age from 19 to 48 years old. The embedded 
+accelerometer and gyroscope in a Samsung Galaxy S II smartphone was used to measure 3-axial linear 
+acceleration (from the accelerometer) and 3-axial angular velocity (from the gyroscope) sampled at a 
+constant 50Hz rate.  Various noise filters were applied to the data (both accelerometer and gyroscope) 
+and it was resampled.  After filtering and resampling, the acceleration data was processed to separate 
+the gravitational and body motion components.  The gravitational component was low pass filtered 
+(.3Hz cutoff) on the assumption that there were only low frequency components to the gravitational 
+acceleration. 
+The complete list of variables of each feature vector is available in 'features.txt' in the original data set.
+For more detailed information on the data from the original study please consult: 
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+The Merged Data: X_merged.txt
+The merged data is just the re-assembly of the training and test data from the original that was 
+randomly separated into training and test data by the researchers.  The features are exactly the same as 
+in each of the two unprocessed sets.  The only difference is that the merged data has had the variable 
+labels (e.g. tBodyAcc-mean()-X) applied to the table header (column names) and the activity and subject 
+columns have been added to the table. The activity has been mapped to its text label instead of a code 
+number 1-6.  The subject codes have been kept intact as integers from 1-30. 
+The Culled Data: X_culled.txt
+The culled data has had all of the columns removed that do not pertain to either standard deviations or 
+means with the exception of the subject and activity columns, which are preserved.   
+The following mean columns are present.
+Time Domain Mean Variables:
+"tBodyAcc-mean()-X" - Mean of the X component of the Body Acceleration.
+"tBodyAcc-mean()-Y"- Mean of the Y component of the Body Acceleration.
+"tBodyAcc-mean()-Z"- Mean of the Z component of the Body Acceleration.
+
+"tGravityAcc-mean()-X"-- Mean of the X component of the acceleration due to gravity.
+"tGravityAcc-mean()-Y"-- Mean of the Y component of the acceleration due to gravity.
+"tGravityAcc-mean()-Z"-- Mean of the Z component of the acceleration due to gravity.
+"tBodyAccJerk-mean()-X"-- Mean of the X component of the Body "Jerk" (Time derivative of 
+Acceleration).
+"tBodyAccJerk-mean()-Y"-- Mean of the Y component of the Body "Jerk" (Time derivative of 
+Acceleration).
+"tBodyAccJerk-mean()-Z"-- Mean of the Z component of the Body "Jerk" (Time derivative of 
+Acceleration).
+"tBodyGyro-mean()-X"-- Mean of the X component of the angular velocity (from Gyro).
+"tBodyGyro-mean()-Y"-- Mean of the Y component of the angular velocity (from Gyro).
+"tBodyGyro-mean()-Z"-- Mean of the Z component of the angular velocity (from Gyro).
+"tBodyGyroJerk-mean()-X"-- Mean of the X component of the time derivative of the angular velocity 
+(from Gyro).
+"tBodyGyroJerk-mean()-Y"-- Mean of the Y component of the time derivative of the angular velocity 
+(from Gyro).
+"tBodyGyroJerk-mean()-Z"-- Mean of the Z component of the time derivative of the angular velocity 
+(from Gyro).
+"tBodyAccMag-mean()"-- Mean of the magnitude (Euclidean norm ) of the body acceleration.
+"tGravityAccMag-mean()"-- Mean of the magnitude (Euclidean norm ) of the acceleration due to gravity.
+"tBodyAccJerkMag-mean()"-- Mean of the magnitude (Euclidean norm ) of the body Jerk.
+"tBodyGyroMag-mean()"-- Mean of the magnitude (Euclidean norm ) of the angular velocity.
+"tBodyGyroJerkMag-mean()"-- Mean of the magnitude (Euclidean norm ) of the angular Jerk.
+Frequency Domain Variables: Each of the variables above with an "f" prefix instead of "t". For example: 
+"fBodyAcc-mean()-X" instead of "tBodyAcc-mean()-X".  These variables have the same meaning except 
+they are evaluated in the frequency domain instead of the time domain (i.e. they are the FFT of the time 
+domain variables).
+
+
+Angle Means (NOTE: only time domain values are present):
+"angle(tBodyAccMean,gravity)" - Angle between the gravity vector and the mean Body Acceleration.
+"angle(tBodyAccJerkMean),gravityMean)" - Angle between the gravity vector mean and the mean Body 
+Jerk.
+"angle(tBodyGyroMean,gravityMean)" - Angle between the gravity vector mean and the mean Body 
+Angular Velocity.
+"angle(tBodyGyroJerkMean,gravityMean)" - Angle between the gravity vector mean and the  mean 
+Body Angular Jerk.
+"angle(X,gravityMean)" - Angle between the gravity vector mean and the X axis.
+"angle(Y,gravityMean)" - Angle between the gravity vector mean and the Y axis.
+"angle(Z,gravityMean)" - Angle between the gravity vector mean and the Z axis.
+
+
+The following time domain standard deviation columns are present.  
+"tBodyAcc-std()-X" - Standard deviation of the X component of the Body Acceleration.
+"tBodyAcc-std()-Y"- Standard deviation of the Y component of the Body Acceleration.
+"tBodyAcc-std()-Z"- Standard deviation of the Z component of the Body Acceleration.
+"tGravityAcc-std()-X"-Standard deviation of the X component of the acceleration due to gravity.
+"tGravityAcc-std()-Y"-Standard deviation of the Y component of the acceleration due to gravity.
+"tGravityAcc-std()-Z"-Standard deviation of the Z component of the acceleration due to gravity.
+"tBodyAccJerk-std()-X" -- Standard deviation of the X component of the Body "Jerk" (Time derivative of 
+Acceleration).
+"tBodyAccJerk-std()-Y"-- Standard deviation of the Y component of the Body "Jerk" (Time derivative of 
+Acceleration).
+"tBodyAccJerk-std()-Z"-- Standard deviation of the Y component of the Body "Jerk" (Time derivative of 
+Acceleration).
+"tBodyGyro-std()-X"-- Standard deviation of the X component of the angular velocity (from Gyro).
+"tBodyGyro-std()-Y"-- Standard deviation of the Y component of the angular velocity (from Gyro).
+"tBodyGyro-std()-Z"-- Standard deviation of the Z component of the angular velocity (from Gyro).
+"tBodyGyroJerk-std()-X" -- Standard deviation of the X component of the time derivative of the angular 
+velocity (from Gyro).
+"tBodyGyroJerk-std()-Y"-- Standard deviation of the Y component of the time derivative of the angular 
+velocity (from Gyro).
+"tBodyGyroJerk-std()-Z"-- Standard deviation of the Z component of the time derivative of the angular 
+velocity (from Gyro).
+"tBodyAccMag-std()" -- Standard deviation of the magnitude (Euclidean norm ) of the body acceleration.
+"tGravityAccMag-std()"-- Standard deviation of the magnitude (Euclidean norm ) of the acceleration due 
+to gravity.
+"tBodyAccJerkMag-std()"--Standard deviation of the magnitude (Euclidean norm ) of the body Jerk.
+"tBodyGyroMag-std()"--Standard deviation of the magnitude (Euclidean norm ) of the angular velocity.
+"tBodyGyroJerkMag-std()"--Standard deviation of the magnitude (Euclidean norm ) of the angular Jerk.
+The same variables are repeated in the time domain and the meaning is the same except the data is 
+from the FFT: 
+"fBodyAcc-std()-X" "fBodyAcc-std()-Y" "fBodyAcc-std()-Z" "fBodyAccJerk-std()-X" "fBodyAccJerk-std()-Y" 
+"fBodyAccJerk-std()-Z" "fBodyGyro-std()-X" "fBodyGyro-std()-Y" "fBodyGyro-std()-Z" "fBodyAccMag-
+std()" "fBodyBodyAccJerkMag-std()" "fBodyBodyGyroMag-std()" "fBodyBodyGyroJerkMag-std()" 
+
+
+The Aggregated Data: X_agr.txt
+The aggregated data is the values in the culled data set averaged over each subject and each activity. 
+This leaves the following columns:
+activity
+subject_code
+Avg(tBodyAcc-mean()-X)
+Avg(tBodyAcc-mean()-Y)
+Avg(tBodyAcc-mean()-Z)
+Avg(tBodyAcc-std()-X)
+Avg(tBodyAcc-std()-Y)
+Avg(tBodyAcc-std()-Z)
+Avg(tGravityAcc-mean()-X)
+Avg(tGravityAcc-mean()-Y)
+Avg(tGravityAcc-mean()-Z)
+Avg(tGravityAcc-std()-X)
+Avg(tGravityAcc-std()-Y)
+Avg(tGravityAcc-std()-Z)
+Avg(tBodyAccJerk-mean()-X)
+Avg(tBodyAccJerk-mean()-Y)
+Avg(tBodyAccJerk-mean()-Z)
+Avg(tBodyAccJerk-std()-X)
+Avg(tBodyAccJerk-std()-Y)
+Avg(tBodyAccJerk-std()-Z)
+Avg(tBodyGyro-mean()-X)
+Avg(tBodyGyro-mean()-Y)
+Avg(tBodyGyro-mean()-Z)
+Avg(tBodyGyro-std()-X)
+Avg(tBodyGyro-std()-Y)
+Avg(tBodyGyro-std()-Z)
+Avg(tBodyGyroJerk-mean()-X)
+Avg(tBodyGyroJerk-mean()-Y)
+Avg(tBodyGyroJerk-mean()-Z)
+Avg(tBodyGyroJerk-std()-X)
+Avg(tBodyGyroJerk-std()-Y)
+Avg(tBodyGyroJerk-std()-Z)
+Avg(tBodyAccMag-mean())
+Avg(tBodyAccMag-std())
+Avg(tGravityAccMag-mean())
+Avg(tGravityAccMag-std())
+Avg(tBodyAccJerkMag-mean())
+Avg(tBodyAccJerkMag-std())
+Avg(tBodyGyroMag-mean())
+Avg(tBodyGyroMag-std())
+Avg(tBodyGyroJerkMag-mean())
+Avg(tBodyGyroJerkMag-std())
+Avg(fBodyAcc-mean()-X)
+Avg(fBodyAcc-mean()-Y)
+Avg(fBodyAcc-mean()-Z)
+Avg(fBodyAcc-std()-X)
+Avg(fBodyAcc-std()-Y)
+Avg(fBodyAcc-std()-Z)
+Avg(fBodyAcc-meanFreq()-X)
+Avg(fBodyAcc-meanFreq()-Y)
+Avg(fBodyAcc-meanFreq()-Z)
+Avg(fBodyAccJerk-mean()-X)
+Avg(fBodyAccJerk-mean()-Y)
+Avg(fBodyAccJerk-mean()-Z)
+Avg(fBodyAccJerk-std()-X)
+Avg(fBodyAccJerk-std()-Y)
+Avg(fBodyAccJerk-std()-Z)
+Avg(fBodyAccJerk-meanFreq()-X)
+Avg(fBodyAccJerk-meanFreq()-Y)
+Avg(fBodyAccJerk-meanFreq()-Z)
+Avg(fBodyGyro-mean()-X)
+Avg(fBodyGyro-mean()-Y)
+Avg(fBodyGyro-mean()-Z)
+Avg(fBodyGyro-std()-X)
+Avg(fBodyGyro-std()-Y)
+Avg(fBodyGyro-std()-Z)
+Avg(fBodyGyro-meanFreq()-X)
+Avg(fBodyGyro-meanFreq()-Y)
+Avg(fBodyGyro-meanFreq()-Z)
+Avg(fBodyAccMag-mean())
+Avg(fBodyAccMag-std())
+Avg(fBodyAccMag-meanFreq())
+Avg(fBodyBodyAccJerkMag-mean())
+Avg(fBodyBodyAccJerkMag-std())
+Avg(fBodyBodyAccJerkMag-meanFreq())
+Avg(fBodyBodyGyroMag-mean())
+Avg(fBodyBodyGyroMag-std())
+Avg(fBodyBodyGyroMag-meanFreq())
+Avg(fBodyBodyGyroJerkMag-mean())
+Avg(fBodyBodyGyroJerkMag-std())
+Avg(fBodyBodyGyroJerkMag-meanFreq())
+Avg(angle(tBodyAccMean,gravity))
+Avg(angle(tBodyAccJerkMean),gravityMean))
+Avg(angle(tBodyGyroMean,gravityMean))
+Avg(angle(tBodyGyroJerkMean,gravityMean))
+Avg(angle(X,gravityMean))
+Avg(angle(Y,gravityMean))
+Avg(angle(Z,gravityMean))
+
+
+How the Data Sets Were Processed
+Assumptions
+It is assumed that the script provided (run_analysis.R) will be run in the directory created by extracting 
+the files in getdata-projectfiles-UCI HAR Dataset.  The is, the following R command should be issued 
+before running the analysis script:  setwd(<data dir>).
+Step 1: For Each Data Set (Train and Test) Apply the Column Names
+For example this code applies the column names for the training data
+# Set up directories so that we can operate in any working directory
+trainDir<-"./train"
+testDir<-"./test"
+
+# read in column headers
+features<-read.table("features.txt")
+
+#read in the training data
+X_train<-read.table(paste(trainDir,"X_train.txt",sep="/"))
+
+# Apply the names to training data
+names(X_train)<-features$V2
+
+A similar process is applied to the test data.
+Step 2: For Each Data Set Add the Subject and Activity Columns
+For example this code processes the columns for the training data.
+# read in the subject column (codes 1-30 for each measurement)
+subject_train<-read.table(paste(trainDir,"subject_train.txt",sep="/"))
+
+# read in activity codes(1-6 for each measurement)
+y_train<-read.table(paste(trainDir,"y_train.txt",sep="/"))
+
+# read in the activity labels
+act_labels<-read.table("activity_labels.txt")
+
+# map activity codes to text (i.e. the labels)
+# The Sapply function applies the mapping to each element of the
+# vector using the anonymous function defined and assigned to FUN.
+mapped<-sapply(X=y_train$V1,FUN=function(x,a){z<-a[x,2]},act_labels)
+
+# build a data frame from the new columns (i.e. activity and subject_code)
+activity_and_subjectcodes<-
+data.frame("activity"=mapped,"subject_code"=subject_train$V1)
+
+# apply new columns to the training data by binding the columns together
+X_train_transformed<-cbind(activity_and_subjectcodes,X_train)
+
+Step 3: Merge the Training Data with the Test Data
+Note that this is not done with the merge function in R since that creates NAs.  We just have to do a row 
+bind to combine the two sets.  Also, it helps esthetically if we sort on the subject code to place them in 
+the original order.
+# merge the two sets (can't use merge because that would create NAs)
+X_merged<-rbind(X_train_transformed,X_test_transformed)
+# sort them by subject_code (this is a purely esthetic operation for ease of reading)
+X_merged<-X_merged[order(X_merged$subject_code),]
+
+Step 4: Cull the Data
+In this step we cull the data, leaving only columns that pertain to mean and standard deviation columns.
+# Grab only the columns we want (mean and std columns)
+meanStdNameCols<-grep("mean|std",names(X_merged),ignore.case=T)
+
+# union the two sets
+desiredNameCols<-union(c(1,2),meanStdNameCols)
+
+# remove all but the columns we want
+X_culled<-X_merged[,desiredNameCols]
+
+Step 5: Average the Data over Activities and Subjects
+In this step we average the data from the culled set across activities and subjects. 
+# Create the data frame with the mean by subject and activity
+byList<-list(activity=X_culled$activity,subject_code=X_culled$subject_code)
+X_agr<-aggregate(X_culled[,3:ncol(X_culled)],by=byList,FUN=mean) 
+
+Step 6: Give the Columns Appropriate Names
+This step renames the columns to appropriately reflect the variables created in the last step. Note that 
+we leave the names of the 1st two columns unchanged. 
+
+#Rename the columns appropriately
+xNames<-names(X_agr)
+xNames[3:length(xNames)]<-paste("Avg(",names(X_agr[,3:ncol(X_agr)]),")",sep="")
+names(X_agr)<-xNames
+
+Step 7: Write the Processed Data Files as .txt Files
+This step merely writes the processed data out.  
+# Write the processed data 
+write.table(file="X_culled.txt",X_culled)
+write.table(file="X_merged.txt",X_merged)
+write.table(file="X_agr.txt",X_agr)
+
