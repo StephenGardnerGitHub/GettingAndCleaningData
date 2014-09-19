@@ -107,9 +107,11 @@ xNames[3:length(xNames)]<-paste("Avg(",names(X_agr[,3:ncol(X_agr)]),")",sep="")
 names(X_agr)<-xNames
 
 # Write the processed data 
-write.table(file="X_culled.txt",X_culled)
-write.table(file="X_merged.txt",X_merged)
-write.table(file="X_agr.txt",X_agr)
+write.table(X_culled,file="X_culled.txt",row.names=F)
+write.table(X_merged,file="X_merged.txt",row.names=F)
+write.table(X_agr,file="X_agr.txt",row.names=F)
+
+
 
 
 
