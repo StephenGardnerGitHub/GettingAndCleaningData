@@ -282,7 +282,9 @@ names(X_agr)<-xNames
 Step 7: Write the Processed Data Files as .txt Files
 This step merely writes the processed data out.  
 # Write the processed data 
-write.table(file="X_culled.txt",X_culled)
-write.table(file="X_merged.txt",X_merged)
-write.table(file="X_agr.txt",X_agr)
+write.table(X_culled,file="X_culled.txt",row.names=F)
+write.table(X_merged,file="X_merged.txt",row.names=F)
+write.table(X_agr,file="X_agr.txt",row.names=F)
+
+
 
