@@ -15,7 +15,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 takes the value of all the mean or standard deviation measurements and averages them over each 
 subject and each activity (note: the original data set had multiple readings for each <subject,activity> 
 pair.)  
-- 'Codebook.pdf': A description of the variables in each of the processed data sets.
+- 'Codebook.mht': A description of the variables in each of the processed data sets.This file is a single file html page.
 
 =====================================================================================
 For any questions about the original (unprocessed) data set please refer to 
